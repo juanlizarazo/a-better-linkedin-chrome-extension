@@ -129,12 +129,25 @@ function createMessageRows(messages) {
     document.getElementById('messages').appendChild(messageRow);
   }
 
+  // footer
+  document.getElementById('footer').innerHTML = `
+    <tr>
+      <td colspan="2">
+        <span class="text-info">Showing last ${messages.length} messages.</span>
+        <a class="btn btn-outline-primary btn-sm float-right" id="go-to-inbox">Go to inbox</a>
+      </td>
+    </tr>
+  `;
+
+  document
+    .getElementById('go-to-inbox')
+    .addEventListener('click', goToInbox);
 }
 
 function createBadges(unreadCount, totalMessages) {
   document.getElementById('stats').innerHTML = `
-    <div class="badge badge-danger">Unread messages: <span id="unread-count"></span></div>
-    <div class="badge badge-success">Total messages: <span id="total-messages"></span></div>
+    <span class="badge text-danger">Unread messages: <span id="unread-count"></span></span> | 
+    <span class="badge text-success">Total messages: <span id="total-messages"></span></span>
   `;
 
   document.getElementById('unread-count').innerText = unreadCount;
@@ -144,5 +157,11 @@ function createBadges(unreadCount, totalMessages) {
 function goToLogin() {
   chrome.tabs.create({
     url: 'https://www.linkedin.com/m/login/'
+  });
+}
+
+function goToInbox() {
+  chrome.tabs.create({
+    url: 'https://www.linkedin.com/messaging'
   });
 }
