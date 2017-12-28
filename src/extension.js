@@ -1,29 +1,4 @@
 /**
- * Group of Http status codes used by the extension.
- * @type {Readonly<Object>}
- */
-const httpStatusCodes = Object.freeze({
-  UNAUTHORIZED: 401,
-  REQUEST_DENIED: 999
-});
-
-const eventSubTypes = Object.freeze({
-  INVITATION_ACCEPT: 'INVITATION_ACCEPT',
-  INMAIL_REPLY: 'INMAIL_REPLY',
-  MEMBER_TO_MEMBER: 'MEMBER_TO_MEMBER',
-  INMAIL: 'INMAIL',
-});
-
-const MESSAGE_KEY = 'com.linkedin.voyager.messaging.event.MessageEvent';
-const PICTURE_KEY = 'com.linkedin.voyager.common.MediaProcessorImage';
-const MEMBER_KEY = 'com.linkedin.voyager.messaging.MessagingMember';
-const PICTURE_URL_BASE = 'https://media-exp2.licdn.com/mpr/mpr/shrinknp_100_100/';
-const DEFAULT_PICTURE_URL = '../assets/default.png';
-const MESSAGE_LIMIT_COUNT = 5;
-
-const MESSAGE_LENGTH_LIMIT_CHARS = 100;
-
-/**
  * Request stats and passes results to handler function.
  */
 function requestStats() {
@@ -43,6 +18,10 @@ function extractTokenAndPerformRequest(cookie) {
   performRequest(token);
 }
 
+/**
+ * Performs request and passes response to method for processing and rendering.
+ * @param {string} token - csrf token
+ */
 function performRequest(token) {
   const request = new Request('https://linkedin.com/voyager/api/messaging/conversations?keyVersion=LEGACY_INBOX', {
     method: 'GET',
@@ -71,7 +50,6 @@ function performRequest(token) {
 
 /**
  * Processes response and appends data to DOM.
- *
  * @param {object} json
  */
 function processResponse(json) {
@@ -118,7 +96,6 @@ function processResponse(json) {
 
 /**
  * Creates and appends messages to DOM.
- *
  * @param {array} messages
  */
 function createMessageRows(messages) {
@@ -162,6 +139,12 @@ function createMessageRows(messages) {
     .addEventListener('click', goToInbox);
 }
 
+/**
+ * Creates stats badges and appends them to DOM.
+ *
+ * @param {number} unreadCount
+ * @param {number} totalMessages
+ */
 function createBadges(unreadCount, totalMessages) {
   document.getElementById('stats').innerHTML = `
     <span class="badge text-danger">Unread messages: <span id="unread-count"></span></span> | 
@@ -172,12 +155,18 @@ function createBadges(unreadCount, totalMessages) {
   document.getElementById('total-messages').innerText = totalMessages;
 }
 
+/**
+ * Opens new tab and loads sign in page.
+ */
 function goToLogin() {
   chrome.tabs.create({
     url: 'https://www.linkedin.com/m/login/'
   });
 }
 
+/**
+ * Opens new tab and loads inbox page.
+ */
 function goToInbox() {
   chrome.tabs.create({
     url: 'https://www.linkedin.com/messaging'
