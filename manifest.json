@@ -10,7 +10,7 @@
   "browser_action": {
     "default_icon": "./assets/icon-32x32.png",
     "default_popup": "./src/popup.html",
-    "default_title": "LinkedIn notifications"
+    "default_title": "LinkedIn messages"
   },
   "permissions": [
     "cookies",
