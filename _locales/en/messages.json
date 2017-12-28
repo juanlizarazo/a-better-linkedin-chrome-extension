@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "A better LinkedIn Extension",
+    "description": "Linked in extension that shows recent messages and other message relevant data."
+  },
+  "appDesc": {
+    "message": "Linked in extension that shows recent messages and other message relevant data.",
+    "description":"Linked in extension that shows recent messages and other message relevant data."
+  }
+}
