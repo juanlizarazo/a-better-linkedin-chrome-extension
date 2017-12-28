@@ -17,6 +17,7 @@ table {
   padding-bottom: 10px;
 }
 
-.btn {
+.btn, .btn-primary {
+  color: #fff !important;
   cursor: pointer;
 }

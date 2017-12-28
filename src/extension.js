@@ -114,8 +114,8 @@ function createMessageRows(messages) {
   // Header
   document.getElementById('header').innerHTML = `
     <tr>
-      <th>subject</th>
-      <th>message</th>
+      <th>Subject</th>
+      <th>Message</th>
     </tr>
   `;
 
@@ -134,7 +134,7 @@ function createMessageRows(messages) {
     <tr>
       <td colspan="2">
         <span class="text-info">Showing last ${messages.length} messages.</span>
-        <a class="btn btn-outline-primary btn-sm float-right" id="go-to-inbox">Go to inbox</a>
+        <a class="btn btn-primary btn-sm float-right" id="go-to-inbox">Go to inbox</a>
       </td>
     </tr>
   `;
