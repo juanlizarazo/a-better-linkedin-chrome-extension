@@ -1,7 +1,17 @@
+body {
+  width: 400px;
+}
+
 table {
   font-size: 12px;
 }
 
-body {
-  width: 400px;
+.table thead th {
+  color: #fff;
+  background-color: #0073b1;
+}
+
+.stats {
+  text-align: center;
+  padding-bottom: 5px;
 }
