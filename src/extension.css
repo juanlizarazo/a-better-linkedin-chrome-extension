@@ -1,6 +1,6 @@
 body {
   padding-top: 5px;
-  width: 400px;
+  width: 450px;
 }
 
 table {
@@ -17,7 +17,17 @@ table {
   padding-bottom: 10px;
 }
 
+/* Bootstrap overrides */
+
 .btn, .btn-primary {
   color: #fff !important;
   cursor: pointer;
+}
+
+.text-danger {
+  color: #d32f2f !important;
+}
+
+.text-success {
+  color: #43a047 !important;
 }
