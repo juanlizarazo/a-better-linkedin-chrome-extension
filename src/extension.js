@@ -96,6 +96,14 @@ function processResponse(json) {
     }
   }
 
+  if (messages.length === 0) {
+    document.getElementById('header').innerHTML = `
+      <tr>
+        <th>No actual messages found.</th>
+      </tr>
+    `;
+    return;
+  }
   createMessageRows(messages);
 }
 
