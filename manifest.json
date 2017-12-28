@@ -4,8 +4,8 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "version": "0.1.0",
-  "author": "Juan Lizarazo",
+  "version": "0.1.1",
+  "author": "Juan",
 
   "browser_action": {
     "default_icon": "./assets/icon-32x32.png",
