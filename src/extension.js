@@ -1,5 +1,6 @@
 /**
- * Request stats and passes results to handler function.
+ * Extracts session cookie data and passes it to handler
+ * to perform request.
  */
 function requestStats() {
   chrome.cookies.get({
@@ -8,6 +9,10 @@ function requestStats() {
   }, extractTokenAndPerformRequest);
 }
 
+/**
+ * Processes cookie object and initiates request.
+ * @param {object} cookie
+ */
 function extractTokenAndPerformRequest(cookie) {
   if (!cookie) {
     goToLogin();
