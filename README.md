@@ -11,7 +11,7 @@ If you find it useful and want a new feature, create an issue or PR.
 
 Install from the chrome web store [here](https://chrome.google.com/webstore/detail/linkedin-a-better-extensi/hhoajngapgiljoippffaaabidedifape?hl=en).
 
-![Preview](/assets/screenshot.png?raw=true "Preview")
+![Preview](/assets/screenshot.jpg?raw=true "Preview")
 
 ## Usage
 
