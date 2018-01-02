@@ -58,7 +58,6 @@ function performRequest(token) {
  * @param {object} json
  */
 function processResponse(json) {
-  console.log(json);
   const { elements, metadata, paging } = json;
 
   const unreadCount = metadata.unreadCount;
