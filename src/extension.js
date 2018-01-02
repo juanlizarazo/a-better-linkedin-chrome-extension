@@ -160,12 +160,9 @@ function createMessageRows(messages) {
  */
 function createBadges(unreadCount, totalMessages) {
   document.getElementById('stats').innerHTML = `
-    <span class="badge text-danger">Unread messages: <span id="unread-count"></span></span> | 
-    <span class="badge text-success">Total messages: <span id="total-messages"></span></span>
+    <span class="badge text-danger">Unread messages: ${unreadCount}</span> | 
+    <span class="badge text-success">Total messages: ${totalMessages}</span>
   `;
-
-  document.getElementById('unread-count').innerText = unreadCount;
-  document.getElementById('total-messages').innerText = totalMessages;
 }
 
 /**
