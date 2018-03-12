@@ -77,9 +77,19 @@ function processResponse(json) {
         const { subject = 'No subject', body } = event.eventContent[MESSAGE_KEY];
         const { miniProfile: profile } = event.from[MEMBER_KEY];
 
-        const pictureUrl = profile.picture
-          ? PICTURE_URL_BASE + profile.picture[PICTURE_KEY].id
-          : DEFAULT_PICTURE_URL;
+        let pictureUrl = DEFAULT_PICTURE_URL;
+
+        if (
+          profile.picture &&
+          profile.picture[PICTURE_KEY] &&
+          profile.picture[PICTURE_KEY].artifacts &&
+          profile.picture[PICTURE_KEY].rootUrl &&
+          profile.picture[PICTURE_KEY].artifacts[0]
+        ) {
+          const pictureUrlBase = profile.picture[PICTURE_KEY].rootUrl;
+          const picturePath = profile.picture[PICTURE_KEY].artifacts[0].fileIdentifyingUrlPathSegment;
+          pictureUrl = pictureUrlBase + picturePath;
+        }
 
         messages.push({
           name: `${profile.firstName} ${profile.lastName}`,

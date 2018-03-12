@@ -28,7 +28,7 @@ const MESSAGE_KEY = 'com.linkedin.voyager.messaging.event.MessageEvent';
  * Key used to extract picture information.
  * @type {string}
  */
-const PICTURE_KEY = 'com.linkedin.voyager.common.MediaProcessorImage';
+const PICTURE_KEY = 'com.linkedin.common.VectorImage';
 
 /**
  * Key used to extract member information.
