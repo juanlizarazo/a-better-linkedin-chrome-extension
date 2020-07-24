@@ -4,7 +4,7 @@
  */
 function requestStats() {
   function test() {
-    alert('example');
+    alert('example for my class!');
   }
 
   test(); // differetnt change to trigger conflict
