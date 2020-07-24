@@ -3,10 +3,11 @@
  * to perform request.
  */
 function requestStats() {
-  chrome.cookies.get({
-    url: 'https://www.linkedin.com',
-    name: 'JSESSIONID'
-  }, extractTokenAndPerformRequest);
+  function test() {
+    alert('example');
+  }
+
+  test(); // differetnt change to trigger conflict
 }
 
 /**
@@ -169,7 +170,7 @@ function createMessageRows(messages) {
  */
 function createBadges(unreadCount, totalMessages) {
   document.getElementById('stats').innerHTML = `
-    <span class="badge text-danger">Unread messages: ${unreadCount}</span> | 
+    <span class="badge text-danger">Unread messages: ${unreadCount}</span> |
     <span class="badge text-success">Total messages: ${totalMessages}</span>
   `;
 }
